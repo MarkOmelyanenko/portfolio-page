@@ -9,7 +9,7 @@ const projectGroups = [
     projects: [
       {
         title: "Movie reviews and trailers - Spring Boot & React & MongoDB",
-        image: "/projects/movies.png",
+        image: "/portfolio-page/projects/movies.png",
         githubFrontend: "https://github.com/your-frontend-repo",
         githubBackend: "https://github.com/your-backend-repo",
         demo: "https://your-demo-link.com",
@@ -28,19 +28,19 @@ const projectGroups = [
     projects: [
       {
         title: "Marta Up Landing",
-        image: "/projects/martaup.png",
+        image: "/portfolio-page/projects/martaup.png",
         github: "",
         demo: "/projects/HTML&CSS/martaup-landing/index.html",
       },
       {
         title: "Space Tourism Landing",
-        image: "/projects/spacetourism.png",
+        image: "/portfolio-page/projects/spacetourism.png",
         github: "",
         demo: "/projects/HTML&CSS/space-tourism-landing/index.html",
       },
       {
         title: "Films Landing - Bootstrap",
-        image: "/projects/filmslanding.png",
+        image: "/portfolio-page/projects/filmslanding.png",
         github: "",
         demo: "/projects/HTML&CSS/films-pages/index.html",
       },
@@ -51,31 +51,31 @@ const projectGroups = [
     projects: [
       {
         title: "Calculator",
-        image: "/projects/calculator.png",
+        image: "/portfolio-page/projects/calculator.png",
         github: "",
         demo: "/projects/JS/calculator/index.html",
       },
       {
         title: "Counter",
-        image: "/projects/counter.png",
+        image: "/portfolio-page/projects/counter.png",
         github: "",
         demo: "/projects/JS/counter/index.html",
       },
       {
         title: "Dice Roller",
-        image: "/projects/diceroller.png",
+        image: "/portfolio-page/projects/diceroller.png",
         github: "",
         demo: "/projects/JS/dice-roller/index.html",
       },
       {
         title: "Password Generator (Console)",
-        image: "/projects/passwordgen.png",
+        image: "/portfolio-page/projects/passwordgen.png",
         github: "",
         demo: "/projects/JS/password-generator/index.html",
       },
       {
         title: "Temperature Converter",
-        image: "/projects/tempconverter.png",
+        image: "/portfolio-page/projects/tempconverter.png",
         github: "",
         demo: "/projects/JS/temperature-converter/index.html",
       },
@@ -86,7 +86,7 @@ const projectGroups = [
     projects: [
       {
         title: "Color Picker App",
-        image: "/projects/color.png",
+        image: "/portfolio-page/projects/color.png",
         github: "",
         demo: "/projects/React/color-picker-app/index.html",
       },
@@ -97,7 +97,7 @@ const projectGroups = [
     projects: [
       {
         title: "Fire Detection and Localization - PyTorch",
-        image: "/projects/fire.png",
+        image: "/portfolio-page/projects/fire.png",
         github: "",
       },
     ],
