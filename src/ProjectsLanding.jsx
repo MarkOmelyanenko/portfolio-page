@@ -10,9 +10,10 @@ const projectGroups = [
       {
         title: "Movie reviews and trailers - Spring Boot & React & MongoDB",
         image: "/portfolio-page/projects/movies.png",
-        githubFrontend: "https://github.com/your-frontend-repo",
-        githubBackend: "https://github.com/your-backend-repo",
-        demo: "https://your-demo-link.com",
+        githubFrontend:
+          "https://github.com/MarkOmelyanenko/movies-frontend.MarkOmelyanenko.github.io",
+        githubBackend: "https://github.com/MarkOmelyanenko/movies-backend",
+        demo: null,
       },
       {
         title: "Crypto Platform - Spring Boot & React & PostgreSQL",
@@ -29,19 +30,22 @@ const projectGroups = [
       {
         title: "Marta Up Landing",
         image: "/portfolio-page/projects/martaup.png",
-        github: "",
+        github:
+          "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/HTML%26CSS/martaup-landing",
         demo: "/portfolio-page/projects/HTML&CSS/martaup-landing/index.html",
       },
       {
         title: "Space Tourism Landing",
         image: "/portfolio-page/projects/spacetourism.png",
-        github: "",
+        github:
+          "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/HTML%26CSS/space-tourism-landing",
         demo: "/portfolio-page/projects/HTML&CSS/space-tourism-landing/index.html",
       },
       {
         title: "Films Landing - Bootstrap",
         image: "/portfolio-page/projects/filmslanding.png",
-        github: "",
+        github:
+          "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/HTML%26CSS/films-pages",
         demo: "/portfolio-page/projects/HTML&CSS/films-pages/index.html",
       },
     ],
@@ -52,31 +56,36 @@ const projectGroups = [
       {
         title: "Calculator",
         image: "/portfolio-page/projects/calculator.png",
-        github: "",
+        github:
+          "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/JS/calculator",
         demo: "/portfolio-page/projects/JS/calculator/index.html",
       },
       {
         title: "Counter",
         image: "/portfolio-page/projects/counter.png",
-        github: "",
+        github:
+          "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/JS/counter",
         demo: "/portfolio-page/projects/JS/counter/index.html",
       },
       {
         title: "Dice Roller",
         image: "/portfolio-page/projects/diceroller.png",
-        github: "",
+        github:
+          "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/JS/dice-roller",
         demo: "/portfolio-page/projects/JS/dice-roller/index.html",
       },
       {
         title: "Password Generator (Console)",
         image: "/portfolio-page/projects/passwordgen.png",
-        github: "",
+        github:
+          "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/JS/password-generator",
         demo: "/portfolio-page/projects/JS/password-generator/index.html",
       },
       {
         title: "Temperature Converter",
         image: "/portfolio-page/projects/tempconverter.png",
-        github: "",
+        github:
+          "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/JS/temperature-converter",
         demo: "/portfolio-page/projects/JS/temperature-converter/index.html",
       },
     ],
@@ -87,7 +96,8 @@ const projectGroups = [
       {
         title: "Color Picker App",
         image: "/portfolio-page/projects/color.png",
-        github: "",
+        github:
+          "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/React/color-picker-app",
         demo: "/portfolio-page/projects/React/color-picker-app/index.html",
       },
     ],
@@ -98,7 +108,7 @@ const projectGroups = [
       {
         title: "Fire Detection and Localization - PyTorch",
         image: "/portfolio-page/projects/fire.png",
-        github: "",
+        github: "https://github.com/MarkOmelyanenko/AI-fire-detection",
       },
     ],
   },
