@@ -100,6 +100,13 @@ const projectGroups = [
           "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/React/color-picker-app",
         demo: "/portfolio-page/projects/React/color-picker-app/index.html",
       },
+      {
+        title: "To Do List App",
+        image: "/portfolio-page/projects/todo.png",
+        github:
+          "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/React/color-picker-app",
+        demo: "/portfolio-page/projects/React/to-do-app/index.html",
+      },
     ],
   },
   {
