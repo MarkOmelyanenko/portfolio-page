@@ -1,0 +1,19 @@
+body {
+  font-family: Verdana;
+  font-size: 2em;
+  text-align: center;
+}
+
+button {
+  font-size: 25px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(0, 162, 255);
+  border-color: rgb(0, 162, 255);
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+button:hover {
+  background-color: rgb(100, 197, 253);
+}

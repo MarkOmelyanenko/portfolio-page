@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(219, 219, 219);
+}
+
+h1 {
+  color: rgb(87, 169, 190);
+}
+
+form {
+  background-color: white;
+  text-align: center;
+  max-width: 350px;
+  margin: auto;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px hsl(0, 0%, 0%, 0.3);
+}
+
+#input-temperature {
+  width: 50%;
+  text-align: center;
+  font-size: 2em;
+  border: 2px solid hsl(0, 0%, 0%, 0.8);
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 15px;
+  background-color: hsla(0, 100%, 60%);
+  color: white;
+  font-size: 1.5em;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+button:hover {
+  background-color: hsla(0, 100%, 50%);
+}
+
+#result {
+  font-size: 1.75em;
+  font-weight: bold;
+}
