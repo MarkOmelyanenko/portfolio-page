@@ -10,8 +10,7 @@ const projectGroups = [
       {
         title: "Movie reviews and trailers - Spring Boot & React & MongoDB",
         image: "/portfolio-page/projects/movies.png",
-        githubFrontend:
-          "https://github.com/MarkOmelyanenko/movies-frontend.MarkOmelyanenko.github.io",
+        githubFrontend: "https://github.com/MarkOmelyanenko/movies-frontend",
         githubBackend: "https://github.com/MarkOmelyanenko/movies-backend",
         demo: null,
       },
