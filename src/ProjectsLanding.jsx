@@ -16,10 +16,11 @@ const projectGroups = [
         demo: null,
       },
       {
-        title: "Crypto Platform - Spring Boot & React & PostgreSQL",
-        image: "https://via.placeholder.com/300",
-        githubFrontend: "https://github.com/your-frontend-repo",
-        githubBackend: "https://github.com/your-backend-repo",
+        title: "CryptoApp - Spring Boot & React & PostgreSQL",
+        image: "/portfolio-page/projects/cryptoapp.png",
+        githubFrontend:
+          "https://github.com/MarkOmelyanenko/crypto-app-frontend",
+        githubBackend: "https://github.com/MarkOmelyanenko/crypto-app-backend",
         demo: null,
       },
     ],
@@ -161,22 +162,31 @@ export default function ProjectsLanding() {
                           {project.title}
                         </h3>
                         <div className="flex gap-4 flex-wrap">
-                          <Button asChild>
+                          {project.github && (
+                            <Button asChild>
+                              <a href={project.github} target="_blank">
+                                GitHub
+                              </a>
+                            </Button>
+                          )}
+                          {/* <Button asChild>
                             <a href={project.github} target="_blank">
                               GitHub
                             </a>
-                          </Button>
+                          </Button> */}
                           {project.githubFrontend && (
                             <Button asChild>
                               <a href={project.githubFrontend} target="_blank">
-                                Frontend GitHub
+                                Frontend <br />
+                                GitHub
                               </a>
                             </Button>
                           )}
                           {project.githubBackend && (
                             <Button asChild>
                               <a href={project.githubBackend} target="_blank">
-                                Backend GitHub
+                                Backend <br />
+                                GitHub
                               </a>
                             </Button>
                           )}
