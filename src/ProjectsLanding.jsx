@@ -162,11 +162,13 @@ export default function ProjectsLanding() {
                         </h3>
                         <div className="flex gap-4 flex-wrap">
                           {project.github && (
-                            <Button asChild>
-                              <a href={project.github} target="_blank">
-                                GitHub
-                              </a>
-                            </Button>
+                            <a
+                              href={project.github}
+                              target="_blank"
+                              className="inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-700 transition-colors"
+                            >
+                              GitHub
+                            </a>
                           )}
                           {/* <Button asChild>
                             <a href={project.github} target="_blank">
@@ -174,27 +176,31 @@ export default function ProjectsLanding() {
                             </a>
                           </Button> */}
                           {project.githubFrontend && (
-                            <Button asChild>
-                              <a href={project.githubFrontend} target="_blank">
-                                Frontend <br />
-                                GitHub
-                              </a>
-                            </Button>
+                            <a
+                              href={project.githubFrontend}
+                              target="_blank"
+                              className="inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-700 transition-colors"
+                            >
+                              Frontend <br /> GitHub
+                            </a>
                           )}
                           {project.githubBackend && (
-                            <Button asChild>
-                              <a href={project.githubBackend} target="_blank">
-                                Backend <br />
-                                GitHub
-                              </a>
-                            </Button>
+                            <a
+                              href={project.githubBackend}
+                              target="_blank"
+                              className="inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-700 transition-colors"
+                            >
+                              Backend <br /> GitHub
+                            </a>
                           )}
                           {project.demo && (
-                            <Button asChild variant="secondary">
-                              <a href={project.demo} target="_blank">
-                                Live Demo
-                              </a>
-                            </Button>
+                            <a
+                              href={project.demo}
+                              target="_blank"
+                              className="inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-700 transition-colors"
+                            >
+                              Live Demo
+                            </a>
                           )}
                         </div>
                       </CardContent>
