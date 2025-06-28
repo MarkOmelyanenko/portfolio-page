@@ -116,6 +116,13 @@ const projectGroups = [
         image: "/portfolio-page/projects/fire.png",
         github: "https://github.com/MarkOmelyanenko/AI-fire-detection",
       },
+      {
+        title:
+          "Image Retrieval System using CNN & Transformer Descriptors (VGG16, MobileNet, ResNet50, ViT_16) – Flask, PostgreSQL, Docker",
+        image: "/portfolio-page/projects/image_retrieval.png",
+        github:
+          "https://github.com/MarkOmelyanenko/cloud-computing-image-retrieval",
+      },
     ],
   },
 ];
