@@ -4,6 +4,28 @@ import { motion } from "framer-motion";
 
 const projectGroups = [
   {
+    title: "High-Frequency Data Projects",
+    projects: [
+      {
+        title: "Order Book Imbalance Signal - Python",
+        image: null,
+        github:
+          "https://github.com/MarkOmelyanenko/python-order-book-imbalance-signal",
+      },
+      {
+        title: "Mean Reversion Backtester - Python",
+        image: null,
+        github:
+          "https://github.com/MarkOmelyanenko/python-mean-reversion-backtester",
+      },
+      {
+        title: "Tick Data Analysis - kdb+/q",
+        image: null,
+        github: "https://github.com/MarkOmelyanenko/kdb-q-tick-data-analysis",
+      },
+    ],
+  },
+  {
     title: "Full-Stack (Spring Boot + React + DB)",
     projects: [
       {
@@ -158,11 +180,13 @@ export default function ProjectsLanding() {
                   >
                     <Card>
                       <CardContent className="p-4">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-40 object-cover rounded-xl mb-4"
-                        />
+                        {project.image && (
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-40 object-cover rounded-xl mb-4"
+                          />
+                        )}
                         <h3 className="text-xl font-semibold mb-2">
                           {project.title}
                         </h3>
