@@ -13,6 +13,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@shadcn/ui": "^0.0.4",
     "@tailwindcss/vite": "^4.0.10",
     "framer-motion": "^12.4.10",
