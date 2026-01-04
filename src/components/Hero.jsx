@@ -65,7 +65,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-xl md:text-2xl text-gray-300 mb-2"
             >
-              Software Engineer
+              Graduate Software Engineer
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ export default function Hero() {
             >
               Passionate about building scalable applications, working with
               high-frequency data, and creating innovative solutions using
-              modern technologies.
+              modern technologies
             </motion.p>
           </motion.div>
 

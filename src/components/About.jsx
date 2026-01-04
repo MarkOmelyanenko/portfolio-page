@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -23,10 +24,7 @@ export default function About() {
   };
 
   return (
-    <section
-      id="about"
-      className="min-h-screen py-20 bg-gray-900 text-white"
-    >
+    <section id="about" className="min-h-screen py-20 bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,50 +48,82 @@ export default function About() {
         >
           <motion.div variants={itemVariants} className="space-y-6">
             <p className="text-lg text-gray-300 leading-relaxed">
-              I'm a passionate full-stack developer and data engineer with
+              {/* I'm a passionate full-stack developer and data engineer with
               expertise in building scalable web applications and working with
               high-frequency financial data. My journey in software development
               has led me to work with a diverse range of technologies, from
-              modern frontend frameworks to robust backend systems.
+              modern frontend frameworks to robust backend systems. */}
+              I’m a Final-year Bachelor’s Computer Science student focused on
+              building reliable systems. My go-to stack is Java/Spring Boot,
+              React, and SQL/NoSQL databases. Lately, I’ve also been getting
+              into quantitative finance — learning the basics of research and
+              market data analysis in Python and kdb+/q.
             </p>
             <p className="text-lg text-gray-300 leading-relaxed">
-              I specialize in creating end-to-end solutions using Spring Boot,
+              {/* I specialize in creating end-to-end solutions using Spring Boot,
               React, and various databases. I also have experience in
               quantitative finance, working with kdb+/q for high-frequency data
-              analysis and developing trading signals.
+              analysis and developing trading signals. */}
+              I’m especially interested in real-time apps that feel
+              “production-like”: structured code, predictable behavior, and
+              maintainable architecture.
             </p>
             <p className="text-lg text-gray-300 leading-relaxed">
-              When I'm not coding, I enjoy exploring new technologies,
-              contributing to open-source projects, and continuously learning
-              to stay at the forefront of software development.
+              When I’m not coding, I explore new tools, polish side projects,
+              and keep learning by building.
             </p>
           </motion.div>
 
-          <motion.div
-            variants={itemVariants}
-            className="grid grid-cols-2 gap-6"
-          >
-            {[
-              { label: "Projects Completed", value: "20+" },
-              { label: "Technologies", value: "15+" },
-              { label: "Years of Experience", value: "3+" },
-              { label: "GitHub Repositories", value: "30+" },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.05 }}
-                className="bg-gray-800 p-6 rounded-xl border border-gray-700 text-center"
-              >
-                <div className="text-3xl font-bold text-cyan-400 mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-gray-400">{stat.label}</div>
-              </motion.div>
-            ))}
+          <motion.div variants={itemVariants} className="space-y-6">
+            <div className="bg-gray-800 p-8 rounded-xl border border-gray-700">
+              <h3 className="text-2xl font-semibold mb-6 text-cyan-400">
+                Languages
+              </h3>
+              <div className="space-y-4">
+                {[
+                  { language: "English", level: "B2" },
+                  { language: "Polish", level: "B2" },
+                  { language: "Ukrainian", level: "Native" },
+                  { language: "Russian", level: "Bilingual" },
+                ].map((lang, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center justify-between"
+                  >
+                    <span className="text-gray-300 font-medium">
+                      {lang.language}
+                    </span>
+                    <span className="text-cyan-400 text-sm font-semibold">
+                      {lang.level}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-gray-800 p-8 rounded-xl border border-gray-700">
+              <h3 className="text-2xl font-semibold mb-4 text-cyan-400">
+                Current Focus
+              </h3>
+              <ul className="space-y-3 text-gray-300">
+                <li className="flex items-start gap-3">
+                  <span className="text-cyan-400 mt-1">•</span>
+                  <span>
+                    Quantitative finance & high-frequency data analysis
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-cyan-400 mt-1">•</span>
+                  <span>Building production-ready backend systems</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-cyan-400 mt-1">•</span>
+                  <span>Full-stack development with modern frameworks</span>
+                </li>
+              </ul>
+            </div>
           </motion.div>
         </motion.div>
       </div>
     </section>
   );
 }
-

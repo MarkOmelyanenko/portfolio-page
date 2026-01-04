@@ -275,7 +275,7 @@ export default function ProjectsLanding() {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-gray-800 text-white py-20"
+      className="min-h-screen bg-gray-900 text-white py-20"
     >
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
@@ -342,7 +342,7 @@ export default function ProjectsLanding() {
                   scale: 1.01,
                   boxShadow: "0px 0px 20px rgba(0, 170, 255, 0.97)",
                 }}
-                className="bg-gray-900 p-6 rounded-2xl shadow-lg transition-all"
+                className="bg-gray-800 p-6 rounded-2xl shadow-lg transition-all"
               >
                 <h2 className="text-3xl font-semibold mb-4 text-white">
                   {group.title}

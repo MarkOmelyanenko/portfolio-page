@@ -19,7 +19,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="min-h-screen py-20 bg-gray-800 text-white"
+      className="min-h-screen py-20 bg-gray-900 text-white"
     >
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
@@ -53,7 +53,7 @@ export default function Experience() {
                 }`}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-cyan-400 rounded-full border-4 border-gray-800 z-10"></div>
+                <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-cyan-400 rounded-full border-4 border-gray-900 z-10"></div>
 
                 {/* Content */}
                 <div
@@ -61,7 +61,7 @@ export default function Experience() {
                     index % 2 === 0 ? "md:pr-12 pl-16" : "md:pl-12 pr-16"
                   }`}
                 >
-                  <div className="bg-gray-900 p-6 rounded-xl border border-gray-700 hover:border-cyan-400 transition-colors">
+                  <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-cyan-400 transition-colors">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                       <div>
                         <h3 className="text-2xl font-bold text-cyan-400 mb-1">

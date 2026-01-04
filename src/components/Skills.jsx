@@ -1,43 +1,42 @@
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 const skillCategories = [
   {
     title: "Frontend",
     skills: [
-      { name: "React", level: 90 },
-      { name: "JavaScript", level: 90 },
-      { name: "HTML/CSS", level: 85 },
-      { name: "Tailwind CSS", level: 85 },
-      { name: "TypeScript", level: 75 },
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "HTML/CSS",
+      "Tailwind CSS",
+      "Bootstrap",
     ],
   },
   {
     title: "Backend",
-    skills: [
-      { name: "Spring Boot", level: 85 },
-      { name: "Java", level: 85 },
-      { name: "Python", level: 90 },
-      { name: "Node.js", level: 75 },
-      { name: "REST APIs", level: 85 },
-    ],
+    skills: ["Spring Boot", "Java", "Python", "FastAPI", "Flask", "REST APIs"],
   },
   {
     title: "Databases",
-    skills: [
-      { name: "PostgreSQL", level: 80 },
-      { name: "MongoDB", level: 80 },
-      { name: "kdb+/q", level: 75 },
-      { name: "MySQL", level: 70 },
-    ],
+    skills: ["PostgreSQL", "MongoDB", "MySQL", "kdb+/q"],
   },
   {
     title: "Tools & Others",
     skills: [
-      { name: "Git", level: 90 },
-      { name: "Docker", level: 75 },
-      { name: "PyTorch", level: 70 },
-      { name: "Flask", level: 75 },
-      { name: "Vite", level: 80 },
+      "Git",
+      "GitHub Actions",
+      "Linux",
+      "Bash",
+      "Docker",
+      "JUnit",
+      "PyTest",
+      "Maven",
+      "Google Cloud Platform",
+      "Numpy",
+      "Pandas",
+      "Matplotlib",
+      "PyTorch",
     ],
   },
 ];
@@ -65,10 +64,7 @@ export default function Skills() {
   };
 
   return (
-    <section
-      id="skills"
-      className="min-h-screen py-20 bg-gray-800 text-white"
-    >
+    <section id="skills" className="min-h-screen py-20 bg-gray-800 text-white">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -103,30 +99,24 @@ export default function Skills() {
               <h3 className="text-2xl font-semibold mb-6 text-cyan-400">
                 {category.title}
               </h3>
-              <div className="space-y-4">
+              <div className="flex flex-wrap gap-3">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-gray-300 font-medium">
-                        {skill.name}
-                      </span>
-                      <span className="text-cyan-400 font-semibold">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="w-full bg-gray-700 rounded-full h-2.5">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{
-                          duration: 1,
-                          delay: categoryIndex * 0.2 + skillIndex * 0.1,
-                        }}
-                        className="bg-gradient-to-r from-blue-500 to-cyan-500 h-2.5 rounded-full"
-                      />
-                    </div>
-                  </div>
+                  <motion.div
+                    key={skillIndex}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.3,
+                      delay: categoryIndex * 0.1 + skillIndex * 0.05,
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    className="bg-gray-800 px-4 py-2 rounded-lg border border-gray-700 hover:border-cyan-400 hover:bg-gray-750 transition-colors"
+                  >
+                    <span className="text-gray-300 font-medium hover:text-white transition-colors">
+                      {skill}
+                    </span>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -136,4 +126,3 @@ export default function Skills() {
     </section>
   );
 }
-

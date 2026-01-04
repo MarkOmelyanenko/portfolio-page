@@ -22,7 +22,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="min-h-screen py-20 bg-gray-900 text-white"
+      className="min-h-screen py-20 bg-gray-800 text-white"
     >
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
@@ -50,7 +50,7 @@ export default function Education() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-gray-800 p-8 rounded-xl border border-gray-700 hover:border-cyan-400 transition-colors"
+              className="bg-gray-900 p-8 rounded-xl border border-gray-700 hover:border-cyan-400 transition-colors"
             >
               <div className="mb-4">
                 <h3 className="text-2xl font-bold text-cyan-400 mb-2">
@@ -78,7 +78,7 @@ export default function Education() {
           <h3 className="text-3xl font-bold text-center mb-8 text-cyan-400">
             Volunteering
           </h3>
-          <div className="bg-gray-800 p-8 rounded-xl border border-gray-700 max-w-3xl mx-auto">
+          <div className="bg-gray-900 p-8 rounded-xl border border-gray-700 max-w-3xl mx-auto">
             <div className="mb-4">
               <h4 className="text-xl font-semibold text-white mb-2">
                 Erasmus Buddy

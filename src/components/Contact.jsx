@@ -117,7 +117,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="min-h-screen py-20 bg-gray-900 text-white">
+    <section id="contact" className="min-h-screen py-20 bg-gray-800 text-white">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -142,7 +142,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-gray-800 p-8 rounded-xl border border-gray-700"
+            className="bg-gray-900 p-8 rounded-xl border border-gray-700"
           >
             <h3 className="text-2xl font-semibold mb-6 text-cyan-400">
               Send a Message
@@ -239,7 +239,7 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="space-y-8"
           >
-            <div className="bg-gray-800 p-8 rounded-xl border border-gray-700">
+            <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">
               <h3 className="text-2xl font-semibold mb-6 text-cyan-400">
                 Contact Information
               </h3>
@@ -273,7 +273,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-gray-800 p-8 rounded-xl border border-gray-700">
+            <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">
               <h3 className="text-2xl font-semibold mb-6 text-cyan-400">
                 Connect With Me
               </h3>
