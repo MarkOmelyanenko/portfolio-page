@@ -6,7 +6,7 @@ import ProjectModal from "./components/ProjectModal";
 
 const projectGroups = [
   {
-    title: "High-Frequency Data Projects",
+    title: "Quant Data Projects",
     projects: [
       {
         title: "Order Book Imbalance Signal - Python",
@@ -94,6 +94,25 @@ const projectGroups = [
           "WebSockets",
           "Binance API",
         ],
+      },
+    ],
+  },
+  {
+    title: "Telegram Bots",
+    projects: [
+      {
+        title: "Crypto Telegram Bot - Java",
+        image: null,
+        github: "https://github.com/MarkOmelyanenko/CryptoCreepTelegramBot",
+        demo: null,
+        description:
+          "Java-based Telegram bot for real-time cryptocurrency prices.",
+        features: [
+          "Developed an interactive Telegram bot that retrieves live cryptocurrency prices from the Binance public API",
+          "Implemented custom reply keyboards for intuitive user interaction and subscription-based price updates",
+          "Packaged the application with a multi-stage Dockerfile for easy deployment",
+        ],
+        technologies: ["Java", "Telegram Bots"],
       },
     ],
   },
@@ -254,12 +273,14 @@ export default function ProjectsLanding() {
       return projectGroups;
     }
 
-    return projectGroups.map((group) => ({
-      ...group,
-      projects: group.projects.filter((project) =>
-        project.technologies?.includes(selectedFilter)
-      ),
-    })).filter((group) => group.projects.length > 0);
+    return projectGroups
+      .map((group) => ({
+        ...group,
+        projects: group.projects.filter((project) =>
+          project.technologies?.includes(selectedFilter)
+        ),
+      }))
+      .filter((group) => group.projects.length > 0);
   }, [selectedFilter]);
 
   const openModal = (project) => {
@@ -330,127 +351,130 @@ export default function ProjectsLanding() {
         </motion.div>
 
         <div className="space-y-8">
-          {filteredProjects.map((group, index) => (
-            group.projects.length > 0 && (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{
-                  scale: 1.01,
-                  boxShadow: "0px 0px 20px rgba(0, 170, 255, 0.97)",
-                }}
-                className="bg-gray-800 p-6 rounded-2xl shadow-lg transition-all"
-              >
-                <h2 className="text-3xl font-semibold mb-4 text-white">
-                  {group.title}
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {group.projects.map((project, idx) => (
-                    <motion.div
-                      key={idx}
-                      whileHover={{
-                        scale: 1.02,
-                        boxShadow: "0px 0px 15px rgba(0, 170, 255, 0.6)",
-                      }}
-                      className="bg-gray-700 p-4 rounded-2xl shadow-md transition-all cursor-pointer"
-                      onClick={() => openModal(project)}
-                    >
-                      <Card>
-                        <CardContent className="p-4">
-                          {project.image && (
-                            <img
-                              src={project.image}
-                              alt={project.title}
-                              className="w-full h-40 object-cover rounded-xl mb-4"
-                            />
-                          )}
-                          <h3 className="text-xl font-semibold mb-2 text-white">
-                            {project.title}
-                          </h3>
-                          {/* Technology Tags */}
-                          {project.technologies && (
-                            <div className="flex flex-wrap gap-2 mb-3">
-                              {project.technologies.slice(0, 3).map((tech, techIdx) => (
-                                <span
-                                  key={techIdx}
-                                  className="px-2 py-1 bg-gray-600 text-cyan-400 rounded text-xs font-medium"
+          {filteredProjects.map(
+            (group, index) =>
+              group.projects.length > 0 && (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileHover={{
+                    scale: 1.01,
+                    boxShadow: "0px 0px 20px rgba(0, 170, 255, 0.97)",
+                  }}
+                  className="bg-gray-800 p-6 rounded-2xl shadow-lg transition-all"
+                >
+                  <h2 className="text-3xl font-semibold mb-4 text-white">
+                    {group.title}
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {group.projects.map((project, idx) => (
+                      <motion.div
+                        key={idx}
+                        whileHover={{
+                          scale: 1.02,
+                          boxShadow: "0px 0px 15px rgba(0, 170, 255, 0.6)",
+                        }}
+                        className="bg-gray-700 p-4 rounded-2xl shadow-md transition-all cursor-pointer"
+                        onClick={() => openModal(project)}
+                      >
+                        <Card>
+                          <CardContent className="p-4">
+                            {project.image && (
+                              <img
+                                src={project.image}
+                                alt={project.title}
+                                className="w-full h-40 object-cover rounded-xl mb-4"
+                              />
+                            )}
+                            <h3 className="text-xl font-semibold mb-2 text-white">
+                              {project.title}
+                            </h3>
+                            {/* Technology Tags */}
+                            {project.technologies && (
+                              <div className="flex flex-wrap gap-2 mb-3">
+                                {project.technologies
+                                  .slice(0, 3)
+                                  .map((tech, techIdx) => (
+                                    <span
+                                      key={techIdx}
+                                      className="px-2 py-1 bg-gray-600 text-cyan-400 rounded text-xs font-medium"
+                                    >
+                                      {tech}
+                                    </span>
+                                  ))}
+                                {project.technologies.length > 3 && (
+                                  <span className="px-2 py-1 bg-gray-600 text-gray-400 rounded text-xs">
+                                    +{project.technologies.length - 3}
+                                  </span>
+                                )}
+                              </div>
+                            )}
+                            <div className="flex gap-4 flex-wrap">
+                              {project.github && (
+                                <a
+                                  href={project.github}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-700 transition-colors text-sm"
                                 >
-                                  {tech}
-                                </span>
-                              ))}
-                              {project.technologies.length > 3 && (
-                                <span className="px-2 py-1 bg-gray-600 text-gray-400 rounded text-xs">
-                                  +{project.technologies.length - 3}
-                                </span>
+                                  GitHub
+                                </a>
+                              )}
+                              {project.githubFrontend && (
+                                <a
+                                  href={project.githubFrontend}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-700 transition-colors text-sm"
+                                >
+                                  Frontend
+                                </a>
+                              )}
+                              {project.githubBackend && (
+                                <a
+                                  href={project.githubBackend}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-700 transition-colors text-sm"
+                                >
+                                  Backend
+                                </a>
+                              )}
+                              {project.demo && (
+                                <a
+                                  href={project.demo}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="inline-flex items-center justify-center rounded-md bg-cyan-500 px-4 py-2 text-white hover:bg-cyan-600 transition-colors text-sm"
+                                >
+                                  Demo
+                                </a>
                               )}
                             </div>
-                          )}
-                          <div className="flex gap-4 flex-wrap">
-                            {project.github && (
-                              <a
-                                href={project.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={(e) => e.stopPropagation()}
-                                className="inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-700 transition-colors text-sm"
-                              >
-                                GitHub
-                              </a>
-                            )}
-                            {project.githubFrontend && (
-                              <a
-                                href={project.githubFrontend}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={(e) => e.stopPropagation()}
-                                className="inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-700 transition-colors text-sm"
-                              >
-                                Frontend
-                              </a>
-                            )}
-                            {project.githubBackend && (
-                              <a
-                                href={project.githubBackend}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={(e) => e.stopPropagation()}
-                                className="inline-flex items-center justify-center rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-700 transition-colors text-sm"
-                              >
-                                Backend
-                              </a>
-                            )}
-                            {project.demo && (
-                              <a
-                                href={project.demo}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={(e) => e.stopPropagation()}
-                                className="inline-flex items-center justify-center rounded-md bg-cyan-500 px-4 py-2 text-white hover:bg-cyan-600 transition-colors text-sm"
-                              >
-                                Demo
-                              </a>
-                            )}
-                          </div>
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              openModal(project);
-                            }}
-                            className="mt-2 text-cyan-400 hover:text-cyan-300 text-sm font-medium"
-                          >
-                            View Details →
-                          </button>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            )
-          ))}
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                openModal(project);
+                              }}
+                              className="mt-2 text-cyan-400 hover:text-cyan-300 text-sm font-medium"
+                            >
+                              View Details →
+                            </button>
+                          </CardContent>
+                        </Card>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              )
+          )}
         </div>
       </div>
 
