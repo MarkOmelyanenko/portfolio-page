@@ -3,14 +3,16 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    title: "Junior MuleSoft Developer",
+    title: "Junior Software Engineer",
     company: "SynergySoft",
     location: "Remote",
     period: "May 2025 – August 2025",
     description: [
-      "Assisted in designing, developing and maintaining API integrations using the MuleSoft Anypoint Platform (REST APIs, DataWeave transformations)",
-      "Worked with production-like flows: debugging, monitoring, testing, and incident-style troubleshooting",
-      "Collaborated with senior developers to improve robustness of integration components and data pipelines",
+      "Built and maintained backend features and service integrations, turning requirements into clean, readable code",
+      "Implemented REST API endpoints and improved existing ones, ensuring consistent request/response contracts",
+      "Investigated issues using logs and debugging tools, identified root causes, and delivered fixes in collaboration with senior engineers",
+      "Added automated tests for critical paths and supported regression checks to keep releases stable",
+      "Worked in an Agile workflow (planning/standups/reviews), delivered changes through code review",
     ],
   },
 ];

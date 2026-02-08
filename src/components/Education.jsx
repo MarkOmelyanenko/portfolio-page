@@ -7,14 +7,14 @@ const education = [
     institution: "Poznan University of Technology",
     location: "Poland",
     period: "October 2022 - February 2026",
-    description: "Computer Science degree with focus on backend development and software engineering",
+    description: "Computer Science degree",
   },
   {
     degree: "Erasmus+ Exchange Program - Computer Science",
     institution: "University of Mons (UMONS)",
     location: "Belgium",
     period: "September 2024 - June 2025",
-    description: "International exchange program focusing on advanced computer science topics",
+    description: "International exchange program ",
   },
 ];
 

@@ -7,7 +7,6 @@ const skillCategories = [
     skills: [
       "React",
       "JavaScript",
-      "TypeScript",
       "HTML/CSS",
       "Tailwind CSS",
       "Bootstrap",

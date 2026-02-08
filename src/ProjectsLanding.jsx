@@ -6,60 +6,46 @@ import ProjectModal from "./components/ProjectModal";
 
 const projectGroups = [
   {
-    title: "Quant Data Projects",
+    title: "Full-Stack Web Applications",
     projects: [
       {
-        title: "Order Book Imbalance Signal - Python",
-        image: null,
+        title: "Crypto Exchange Simulator",
+        image: "/portfolio-page/projects/cryptoapp.png",
         github:
-          "https://github.com/MarkOmelyanenko/python-order-book-imbalance-signal",
+          "https://github.com/MarkOmelyanenko/crypto-exchange-platfrom",
+        demo: "https://broker-shades-confidential-veteran.trycloudflare.com/",
         description:
-          "A Python project for analyzing Limit Order Book data, calculating Bid/Ask imbalance, generating trading signals, and observing correlations with price changes.",
+          "Full-stack cryptocurrency exchange simulation platform. Simulates buying/selling of cryptocurrencies with portfolio tracking and detailed transaction history.",
         features: [
-          "Implemented LOB analysis pipeline (CSV loading and mock LOB generation)",
-          "Computed imbalance metrics: volume, price-weighted, and order-flow",
-          "Generated buy/sell/neutral signals (threshold, smoothed, momentum, combined)",
-          "Evaluated signals via multi-horizon correlation and forward-return stats",
-          "Exported results to CSV and produced visual diagnostics",
+          "Built a full-stack exchange simulator: JWT auth, wallet balances (USDT deposits with a rolling 24h limit), and an asset catalog with live pricing and 24h change",
+          "Implemented spot trading: market BUY/SELL at live prices; persisted trades and a unified transaction history",
+          "Delivered real-time UX via Server-Sent Events (SSE) for live price streaming; integrated external market data sources (WhiteBIT) with caching and scheduled price updates",
+          "Improved reliability: Redis-backed per-user rate limiting (orders/deposits), health monitoring via Actuator + custom system health endpoint, and Swagger/OpenAPI documentation",
         ],
-        technologies: ["Python", "Pandas", "NumPy", "Matplotlib"],
+        technologies: [
+          "Java 21",
+          "Spring Boot",
+          "Spring Security",
+          "Spring Data",
+          "React",
+          "PostgreSQL",
+          "Server-Sent Events",
+          "WhiteBIT API",
+          "Redis",
+          "Kafka",
+          "Docker",
+          "Docker Compose",
+          "Jenkins",
+          "AWS",
+          "Swagger",
+          "OpenAPI",
+          "HTML",
+          "CSS",
+          "JavaScript",
+        ],
       },
       {
-        title: "Mean Reversion Backtester - Python",
-        image: null,
-        github:
-          "https://github.com/MarkOmelyanenko/python-mean-reversion-backtester",
-        description:
-          "A comprehensive Python backtester for mean-reversion trading strategies with realistic transaction costs and out-of-sample validation.",
-        features: [
-          "Implemented z-score mean-reversion strategy with configurable lookback",
-          "Built realistic backtest with no look-ahead bias and transaction costs",
-          "Performed grid search on train data and out-of-sample validation",
-          "Generated equity/drawdown plots and key metrics (CAGR, Sharpe, MDD)",
-        ],
-        technologies: ["Python", "Pandas", "NumPy", "Matplotlib", "yfinance"],
-      },
-      {
-        title: "Tick Data Analysis - kdb+/q",
-        image: null,
-        github: "https://github.com/MarkOmelyanenko/kdb-q-tick-data-analysis",
-        description:
-          "A kdb+/q project for generating synthetic tick data and performing financial analytics including VWAP calculations and time-bar aggregations.",
-        features: [
-          "Generated 1.5M synthetic tick records (AAPL/MSFT/GOOG/AMZN)",
-          "Implemented core analytics: VWAP (per symbol and overall)",
-          "Created 1-minute bars (OHLC, VWAP, volume, trade count)",
-          "Demonstrated practical q patterns including select vs exec",
-        ],
-        technologies: ["kdb+/q"],
-      },
-    ],
-  },
-  {
-    title: "Full-Stack (Spring Boot + React + DB)",
-    projects: [
-      {
-        title: "Movie reviews and trailers - Spring Boot & React & MongoDB",
+        title: "Movie reviews and trailers",
         image: "/portfolio-page/projects/movies.png",
         githubFrontend: "https://github.com/MarkOmelyanenko/movies-frontend",
         githubBackend: "https://github.com/MarkOmelyanenko/movies-backend",
@@ -73,27 +59,26 @@ const projectGroups = [
         ],
         technologies: ["Spring Boot", "React", "MongoDB", "Java"],
       },
+    ],
+  },
+  {
+    title: "React Projects",
+    projects: [
       {
-        title: "CryptoApp - Spring Boot & React & PostgreSQL",
-        image: "/portfolio-page/projects/cryptoapp.png",
-        githubFrontend:
-          "https://github.com/MarkOmelyanenko/crypto-app-frontend",
-        githubBackend: "https://github.com/MarkOmelyanenko/crypto-app-backend",
-        demo: null,
-        description:
-          "Real-time cryptocurrency trading simulation platform with WebSocket integration.",
-        features: [
-          "Implemented real-time price updates using Binance API and WebSocket",
-          "Simulated buying/selling of cryptocurrencies with portfolio tracking",
-          "Provided detailed transaction history and performance overview",
-        ],
-        technologies: [
-          "Spring Boot",
-          "React",
-          "PostgreSQL",
-          "WebSockets",
-          "Binance API",
-        ],
+        title: "Color Picker App",
+        image: "/portfolio-page/projects/color.png",
+        github:
+          "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/React/color-picker-app",
+        demo: "/portfolio-page/projects/React/color-picker-app/index.html",
+        technologies: ["React", "JavaScript", "CSS"],
+      },
+      {
+        title: "To Do List App",
+        image: "/portfolio-page/projects/todo.png",
+        github:
+          "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/React/color-picker-app",
+        demo: "/portfolio-page/projects/React/to-do-app/index.html",
+        technologies: ["React", "JavaScript", "CSS"],
       },
     ],
   },
@@ -101,7 +86,7 @@ const projectGroups = [
     title: "Telegram Bots",
     projects: [
       {
-        title: "Crypto Telegram Bot - Java",
+        title: "Crypto Telegram Bot",
         image: null,
         github: "https://github.com/MarkOmelyanenko/CryptoCreepTelegramBot",
         demo: null,
@@ -136,7 +121,7 @@ const projectGroups = [
         technologies: ["HTML", "CSS", "JavaScript"],
       },
       {
-        title: "Films Landing - Bootstrap",
+        title: "Films Landing",
         image: "/portfolio-page/projects/filmslanding.png",
         github:
           "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/HTML%26CSS/films-pages",
@@ -191,27 +176,6 @@ const projectGroups = [
     ],
   },
   {
-    title: "React Projects",
-    projects: [
-      {
-        title: "Color Picker App",
-        image: "/portfolio-page/projects/color.png",
-        github:
-          "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/React/color-picker-app",
-        demo: "/portfolio-page/projects/React/color-picker-app/index.html",
-        technologies: ["React", "JavaScript", "CSS"],
-      },
-      {
-        title: "To Do List App",
-        image: "/portfolio-page/projects/todo.png",
-        github:
-          "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/React/color-picker-app",
-        demo: "/portfolio-page/projects/React/to-do-app/index.html",
-        technologies: ["React", "JavaScript", "CSS"],
-      },
-    ],
-  },
-  {
     title: "AI Projects",
     projects: [
       {
@@ -249,6 +213,56 @@ const projectGroups = [
           "ResNet50",
           "ViT",
         ],
+      },
+    ],
+  },
+  {
+    title: "Quant Data Projects",
+    projects: [
+      {
+        title: "Order Book Imbalance Signal - Python",
+        image: null,
+        github:
+          "https://github.com/MarkOmelyanenko/python-order-book-imbalance-signal",
+        description:
+          "A Python project for analyzing Limit Order Book data, calculating Bid/Ask imbalance, generating trading signals, and observing correlations with price changes.",
+        features: [
+          "Implemented LOB analysis pipeline (CSV loading and mock LOB generation)",
+          "Computed imbalance metrics: volume, price-weighted, and order-flow",
+          "Generated buy/sell/neutral signals (threshold, smoothed, momentum, combined)",
+          "Evaluated signals via multi-horizon correlation and forward-return stats",
+          "Exported results to CSV and produced visual diagnostics",
+        ],
+        technologies: ["Python", "Pandas", "NumPy", "Matplotlib"],
+      },
+      {
+        title: "Mean Reversion Backtester - Python",
+        image: null,
+        github:
+          "https://github.com/MarkOmelyanenko/python-mean-reversion-backtester",
+        description:
+          "A comprehensive Python backtester for mean-reversion trading strategies with realistic transaction costs and out-of-sample validation.",
+        features: [
+          "Implemented z-score mean-reversion strategy with configurable lookback",
+          "Built realistic backtest with no look-ahead bias and transaction costs",
+          "Performed grid search on train data and out-of-sample validation",
+          "Generated equity/drawdown plots and key metrics (CAGR, Sharpe, MDD)",
+        ],
+        technologies: ["Python", "Pandas", "NumPy", "Matplotlib", "yfinance"],
+      },
+      {
+        title: "Tick Data Analysis - kdb+/q",
+        image: null,
+        github: "https://github.com/MarkOmelyanenko/kdb-q-tick-data-analysis",
+        description:
+          "A kdb+/q project for generating synthetic tick data and performing financial analytics including VWAP calculations and time-bar aggregations.",
+        features: [
+          "Generated 1.5M synthetic tick records (AAPL/MSFT/GOOG/AMZN)",
+          "Implemented core analytics: VWAP (per symbol and overall)",
+          "Created 1-minute bars (OHLC, VWAP, volume, trade count)",
+          "Demonstrated practical q patterns including select vs exec",
+        ],
+        technologies: ["kdb+/q"],
       },
     ],
   },
