@@ -87,7 +87,7 @@ export default function Education() {
                 Erasmus Student Network (ESN), Poznan University of Technology
               </p>
               <p className="text-cyan-400 font-semibold">
-                September 2025 – Present
+                September 2025 – February 2026
               </p>
             </div>
             <ul className="space-y-2 text-gray-300">
