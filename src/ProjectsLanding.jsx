@@ -11,8 +11,7 @@ const projectGroups = [
       {
         title: "Crypto Exchange Simulator",
         image: "/portfolio-page/projects/cryptoapp.png",
-        github:
-          "https://github.com/MarkOmelyanenko/crypto-exchange-platfrom",
+        github: "https://github.com/MarkOmelyanenko/crypto-exchange-platfrom",
         demo: "https://broker-shades-confidential-veteran.trycloudflare.com/",
         description:
           "Full-stack cryptocurrency exchange simulation platform. Simulates buying/selling of cryptocurrencies with portfolio tracking and detailed transaction history.",
@@ -26,7 +25,7 @@ const projectGroups = [
           "Java 21",
           "Spring Boot",
           "Spring Security",
-          "Spring Data",
+          "Spring Data JPA",
           "React",
           "PostgreSQL",
           "Server-Sent Events",
@@ -36,6 +35,7 @@ const projectGroups = [
           "Docker",
           "Docker Compose",
           "Jenkins",
+          "Actuator",
           "AWS",
           "Swagger",
           "OpenAPI",
@@ -44,6 +44,40 @@ const projectGroups = [
           "JavaScript",
         ],
       },
+
+      {
+        title: "Mini Marketplace Platform",
+        image: "/portfolio-page/projects/marketplace.png",
+        github: "https://github.com/MarkOmelyanenko/marketplace",
+        demo: "https://todd-measurement-reflect-hardware.trycloudflare.com/",
+        description:
+          "Microservices-based e-commerce platform with payments and event-driven workflows.",
+        features: [
+          "Built a microservices marketplace with three React portals (Partner/Buyer/Ops) behind an API Gateway (routing, CORS, rate limiting, correlation IDs)",
+          "Implemented offer lifecycle and publishing flow with a listing-fee payment; added optional asynchronous AI enrichment (title/description/tags) via Kafka",
+          "Developed a payments service integrated with a mock provider: idempotent payment creation, signed webhook verification, and publishing payment events to Kafka",
+          "Improved reliability and operability using the transactional outbox pattern, event-driven state updates (orders/refunds), and Actuator + Prometheus metrics/log correlation",
+        ],
+        technologies: [
+          "Java 21",
+          "Spring Boot",
+          "Spring Data JPA",
+          "React",
+          "PostgreSQL",
+          "Kafka",
+          "Docker",
+          "Docker Compose",
+          "Actuator",
+          "Prometheus",
+          "GCP",
+          "Swagger",
+          "OpenAPI",
+          "HTML",
+          "CSS",
+          "JavaScript",
+        ],
+      },
+
       {
         title: "Movie reviews and trailers",
         image: "/portfolio-page/projects/movies.png",
@@ -82,6 +116,7 @@ const projectGroups = [
       },
     ],
   },
+
   {
     title: "Telegram Bots",
     projects: [
@@ -158,7 +193,7 @@ const projectGroups = [
         technologies: ["JavaScript", "HTML", "CSS"],
       },
       {
-        title: "Password Generator (Console)",
+        title: "Console Password Generator",
         image: "/portfolio-page/projects/passwordgen.png",
         github:
           "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/JS/password-generator",
@@ -172,6 +207,60 @@ const projectGroups = [
           "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/JS/temperature-converter",
         demo: "/portfolio-page/projects/JS/temperature-converter/index.html",
         technologies: ["JavaScript", "HTML", "CSS"],
+      },
+    ],
+  },
+  {
+    title: "Big Data Projects",
+    projects: [
+      {
+        title: "Big Data Pipeline: Restaurant Orders Analytics",
+        image: null,
+        github:
+          "https://github.com/MarkOmelyanenko/big-data-pipeline-restaurant-orders-analytics",
+        demo: null,
+        description:
+          "A Big Data analytics pipeline that processes restaurant order data using Apache Airflow, Hadoop MapReduce (Java), and Apache Hive. The workflow aggregates orders by restaurant and payment type, joins with restaurant metadata, and produces ranked statistics by country and cuisine.",
+        features: [
+          "Built an Airflow-orchestrated pipeline to process restaurant orders and generate ranked analytics by country and cuisine",
+          "Implemented MapReduce in Java to compute order counts and average order value per restaurant and payment type",
+          "Used Hive to join results with restaurant metadata, aggregate KPIs, rank cuisines per country, and export final JSON to HDFS",
+        ],
+        technologies: [
+          "Apache Airflow",
+          "Apache Hadoop",
+          "Apache Hive",
+          "MapReduce",
+          "Java",
+          "Python",
+          "Maven",
+        ],
+      },
+      {
+        title: "Apache Spark Project — Food Orders & Restaurants",
+        image: null,
+        github:
+          "https://github.com/MarkOmelyanenko/big-data-pipeline-restaurant-orders-analytics",
+        demo: null,
+        description:
+          "A Big Data analytics project using Apache Spark (PySpark) to process food order and restaurant data. The project implements the same two-stage pipeline with both the RDD API and the DataFrame API, and uses Delta Lake for structured output.",
+        features: [
+          "Built a two-stage Spark pipeline to aggregate orders and join with restaurant metadata",
+          "Generated country/cuisine rankings using joins, aggregations, and ranking logic in Spark SQL",
+          "Persisted outputs to HDFS and Delta Lake and validated results by reloading and sampling",
+        ],
+        technologies: [
+          "Apache Spark",
+          "PySpark",
+          "Delta Lake",
+          "Hadoop (YARN)",
+          "HDFS",
+          "RDD",
+          "Hive",
+          "MapReduce",
+          "Python",
+          "Jupyter Notebook",
+        ],
       },
     ],
   },
@@ -191,8 +280,7 @@ const projectGroups = [
         technologies: ["PyTorch", "Python", "CNN"],
       },
       {
-        title:
-          "Image Retrieval System using CNN & Transformer Descriptors (VGG16, MobileNet, ResNet50, ViT_16) – Flask, PostgreSQL, Docker",
+        title: "Image Retrieval System using CNN & Transformer Descriptors",
         image: "/portfolio-page/projects/image_retrieval.png",
         github:
           "https://github.com/MarkOmelyanenko/cloud-computing-image-retrieval",
@@ -211,7 +299,7 @@ const projectGroups = [
           "VGG16",
           "MobileNet",
           "ResNet50",
-          "ViT",
+          "ViT16",
         ],
       },
     ],
@@ -272,8 +360,8 @@ const projectGroups = [
 const allTechnologies = [
   ...new Set(
     projectGroups.flatMap((group) =>
-      group.projects.flatMap((project) => project.technologies || [])
-    )
+      group.projects.flatMap((project) => project.technologies || []),
+    ),
   ),
 ].sort();
 
@@ -291,7 +379,7 @@ export default function ProjectsLanding() {
       .map((group) => ({
         ...group,
         projects: group.projects.filter((project) =>
-          project.technologies?.includes(selectedFilter)
+          project.technologies?.includes(selectedFilter),
         ),
       }))
       .filter((group) => group.projects.length > 0);
@@ -487,7 +575,7 @@ export default function ProjectsLanding() {
                     ))}
                   </div>
                 </motion.div>
-              )
+              ),
           )}
         </div>
       </div>
