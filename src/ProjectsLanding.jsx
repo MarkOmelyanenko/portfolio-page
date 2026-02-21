@@ -132,7 +132,7 @@ const projectGroups = [
           "Implemented custom reply keyboards for intuitive user interaction and subscription-based price updates",
           "Packaged the application with a multi-stage Dockerfile for easy deployment",
         ],
-        technologies: ["Java", "Telegram Bots"],
+        technologies: ["Java", "Telegram Bots", "Binance API"],
       },
     ],
   },
