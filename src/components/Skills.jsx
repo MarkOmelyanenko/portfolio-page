@@ -27,6 +27,10 @@ const skillCategories = [
     skills: ["PostgreSQL", "MongoDB", "MySQL", "kdb+/q"],
   },
   {
+    title: "Testing",
+    skills: ["JUnit", "PyTest", "Actuator", "Prometheus"],
+  },
+  {
     title: "Data Engineering",
     skills: ["Numpy", "Pandas", "Matplotlib", "PyTorch"],
   },
@@ -37,12 +41,8 @@ const skillCategories = [
       "Linux",
       "Bash",
       "Docker",
-      "JUnit",
-      "PyTest",
       "Maven",
       "Jenkins",
-      "Actuator",
-      "Prometheus",
       "GitHub Actions",
       "Google Cloud Platform",
       "Amazon Web Services",
