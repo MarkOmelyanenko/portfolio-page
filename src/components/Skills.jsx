@@ -34,7 +34,6 @@ const skillCategories = [
     title: "Tools & Others",
     skills: [
       "Git",
-      "GitHub Actions",
       "Linux",
       "Bash",
       "Docker",
@@ -44,6 +43,7 @@ const skillCategories = [
       "Jenkins",
       "Actuator",
       "Prometheus",
+      "GitHub Actions",
       "Google Cloud Platform",
       "Amazon Web Services",
     ],
