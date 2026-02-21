@@ -91,7 +91,7 @@ const projectGroups = [
           "Developed interactive frontend with React to browse movies and watch trailers",
           "Enabled users to add reviews and access trailers directly through the interface",
         ],
-        technologies: ["Spring Boot", "React", "MongoDB", "Java"],
+        technologies: ["Spring Boot", "React", "MongoDB", "Java", "Maven"],
       },
     ],
   },
