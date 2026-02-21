@@ -4,21 +4,31 @@ import { motion } from "framer-motion";
 const skillCategories = [
   {
     title: "Frontend",
-    skills: [
-      "React",
-      "JavaScript",
-      "HTML/CSS",
-      "Tailwind CSS",
-      "Bootstrap",
-    ],
+    skills: ["React", "JavaScript", "HTML/CSS", "Tailwind CSS", "Bootstrap"],
   },
   {
     title: "Backend",
-    skills: ["Spring Boot", "Java", "Python", "FastAPI", "Flask", "REST APIs"],
+    skills: [
+      "Spring Boot",
+      "Java",
+      "Python",
+      "FastAPI",
+      "Flask",
+      "REST API",
+      "Microservices",
+      "Redis",
+      "Kafka",
+      "Swagger",
+      "OpenAPI",
+    ],
   },
   {
     title: "Databases",
     skills: ["PostgreSQL", "MongoDB", "MySQL", "kdb+/q"],
+  },
+  {
+    title: "Data Engineering",
+    skills: ["Numpy", "Pandas", "Matplotlib", "PyTorch"],
   },
   {
     title: "Tools & Others",
@@ -31,11 +41,11 @@ const skillCategories = [
       "JUnit",
       "PyTest",
       "Maven",
+      "Jenkins",
+      "Actuator",
+      "Prometheus",
       "Google Cloud Platform",
-      "Numpy",
-      "Pandas",
-      "Matplotlib",
-      "PyTorch",
+      "Amazon Web Services",
     ],
   },
 ];
