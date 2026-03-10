@@ -239,8 +239,7 @@ const projectGroups = [
       {
         title: "Apache Spark Project — Food Orders & Restaurants",
         image: null,
-        github:
-          "https://github.com/MarkOmelyanenko/big-data-pipeline-restaurant-orders-analytics",
+        github: "https://github.com/MarkOmelyanenko/big-data-spark-food-orders",
         demo: null,
         description:
           "A Big Data analytics project using Apache Spark (PySpark) to process food order and restaurant data. The project implements the same two-stage pipeline with both the RDD API and the DataFrame API, and uses Delta Lake for structured output.",
