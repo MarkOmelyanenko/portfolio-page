@@ -6,7 +6,7 @@ const experiences = [
     title: "Junior Software Engineer",
     company: "SynergySoft",
     location: "Remote",
-    period: "May 2025 – August 2025",
+    period: "March 2025 – August 2025",
     description: [
       "Built and maintained backend features and service integrations, turning requirements into clean, readable code",
       "Implemented REST API endpoints and improved existing ones, ensuring consistent request/response contracts",
