@@ -55,7 +55,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600 bg-clip-text text-transparent"
+              className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 px-1 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600 bg-clip-text text-transparent break-words"
             >
               👋 Hi, I'm Mark Omelyanenko
             </motion.h1>
@@ -63,7 +63,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-xl md:text-2xl text-gray-300 mb-2"
+              className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-2"
             >
               Graduate Software Engineer
             </motion.p>

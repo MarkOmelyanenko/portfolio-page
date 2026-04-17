@@ -264,7 +264,7 @@ export default function Contact() {
                     <p className="text-gray-400 text-sm">Email</p>
                     <a
                       href="mailto:mark.omelyanenko@gmail.com"
-                      className="text-white hover:text-cyan-400 transition-colors"
+                      className="text-white hover:text-cyan-400 transition-colors break-all"
                     >
                       mark.omelyanenko@gmail.com
                     </a>

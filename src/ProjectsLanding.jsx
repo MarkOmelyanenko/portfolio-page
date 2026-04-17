@@ -422,12 +422,13 @@ export default function ProjectsLanding() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-8"
+          className="mb-8 -mx-4 px-4 sm:mx-0 sm:px-0"
         >
-          <div className="flex flex-wrap gap-3 justify-center">
+          <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 sm:pb-0 sm:flex-wrap sm:justify-center [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <button
+              type="button"
               onClick={() => setSelectedFilter("All")}
-              className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+              className={`shrink-0 px-4 py-2 sm:px-6 rounded-lg text-sm sm:text-base font-medium transition-colors ${
                 selectedFilter === "All"
                   ? "bg-cyan-400 text-gray-900"
                   : "bg-gray-700 text-gray-300 hover:bg-gray-600"
@@ -438,8 +439,9 @@ export default function ProjectsLanding() {
             {allTechnologies.map((tech) => (
               <button
                 key={tech}
+                type="button"
                 onClick={() => setSelectedFilter(tech)}
-                className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+                className={`shrink-0 px-4 py-2 sm:px-6 rounded-lg text-sm sm:text-base font-medium transition-colors whitespace-nowrap ${
                   selectedFilter === tech
                     ? "bg-cyan-400 text-gray-900"
                     : "bg-gray-700 text-gray-300 hover:bg-gray-600"

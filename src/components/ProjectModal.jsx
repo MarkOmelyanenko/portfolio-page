@@ -14,19 +14,19 @@ export default function ProjectModal({ project, isOpen, onClose }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[200]"
           />
           {/* Modal */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 z-[200] flex items-center justify-center p-4"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="bg-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-gray-700">
               <div className="sticky top-0 bg-gray-800 border-b border-gray-700 p-6 flex justify-between items-start">
-                <h2 className="text-3xl font-bold text-white pr-4">
+                <h2 className="text-xl sm:text-3xl font-bold text-white pr-4 break-words">
                   {project.title}
                 </h2>
                 <button

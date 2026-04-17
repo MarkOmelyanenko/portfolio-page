@@ -119,7 +119,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:mark.omelyanenko@gmail.com"
-                  className="hover:text-cyan-400 transition-colors"
+                  className="hover:text-cyan-400 transition-colors break-all"
                 >
                   mark.omelyanenko@gmail.com
                 </a>

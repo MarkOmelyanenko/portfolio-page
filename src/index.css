@@ -31,7 +31,17 @@ html.light {
 }
 
 /* Apply theme colors */
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* Fixed nav + in-page links */
+section[id] {
+  scroll-margin-top: 5rem;
 }

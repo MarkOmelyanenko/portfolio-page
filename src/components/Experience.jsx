@@ -6,7 +6,7 @@ const experiences = [
     title: "Junior Software Engineer",
     company: "SynergySoft",
     location: "Remote",
-    period: "March 2025 – August 2025",
+    period: "May 2025 – August 2025",
     description: [
       "Built and maintained backend features and service integrations, turning requirements into clean, readable code",
       "Implemented REST API endpoints and improved existing ones, ensuring consistent request/response contracts",
@@ -59,19 +59,21 @@ export default function Experience() {
 
                 {/* Content */}
                 <div
-                  className={`w-full md:w-1/2 ${
-                    index % 2 === 0 ? "md:pr-12 pl-16" : "md:pl-12 pr-16"
+                  className={`w-full md:w-1/2 pl-16 pr-2 sm:pr-4 ${
+                    index % 2 === 0 ? "md:pr-12 md:pl-0" : "md:pl-12 md:pr-0"
                   }`}
                 >
-                  <div className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-cyan-400 transition-colors">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                      <div>
-                        <h3 className="text-2xl font-bold text-cyan-400 mb-1">
+                  <div className="bg-gray-800 p-4 sm:p-6 rounded-xl border border-gray-700 hover:border-cyan-400 transition-colors min-w-0">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-2">
+                      <div className="min-w-0">
+                        <h3 className="text-xl sm:text-2xl font-bold text-cyan-400 mb-1">
                           {exp.title}
                         </h3>
-                        <p className="text-xl text-gray-300">{exp.company}</p>
+                        <p className="text-lg sm:text-xl text-gray-300">
+                          {exp.company}
+                        </p>
                       </div>
-                      <div className="text-right mt-2 md:mt-0">
+                      <div className="text-left md:text-right mt-2 md:mt-0 shrink-0">
                         <p className="text-gray-400 text-sm">{exp.location}</p>
                         <p className="text-cyan-400 font-semibold">
                           {exp.period}

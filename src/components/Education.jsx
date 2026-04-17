@@ -53,7 +53,7 @@ export default function Education() {
               className="bg-gray-900 p-8 rounded-xl border border-gray-700 hover:border-cyan-400 transition-colors"
             >
               <div className="mb-4">
-                <h3 className="text-2xl font-bold text-cyan-400 mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold text-cyan-400 mb-2 break-words">
                   {edu.degree}
                 </h3>
                 <p className="text-xl text-gray-300 mb-1">{edu.institution}</p>
