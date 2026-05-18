@@ -49,7 +49,7 @@ const projectGroups = [
         title: "Mini Marketplace Platform",
         image: "/portfolio-page/projects/marketplace.png",
         github: "https://github.com/MarkOmelyanenko/marketplace",
-        demo: "https://todd-measurement-reflect-hardware.trycloudflare.com/",
+        demo: "https://architecture-theme-locking-far.trycloudflare.com/",
         description:
           "Microservices-based e-commerce platform with payments and event-driven workflows.",
         features: [
