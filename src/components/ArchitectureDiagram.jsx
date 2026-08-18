@@ -1,7 +1,7 @@
 function Box({ title, hint, accent = false, children, className = "" }) {
   return (
     <div
-      className={`min-w-0 rounded-md border px-2 py-1.5 text-center ${
+      className={`min-w-0 rounded-md border px-1.5 py-1 text-center ${
         accent ? "border-accent" : "border-line"
       } ${className}`}
     >
@@ -15,7 +15,7 @@ function Box({ title, hint, accent = false, children, className = "" }) {
 }
 
 function Stem() {
-  return <div className="mx-auto h-2 w-px bg-line" aria-hidden="true" />;
+  return <div className="mx-auto h-1.5 w-px bg-line" aria-hidden="true" />;
 }
 
 function FanConnector({ branches = 3, converge = false }) {
@@ -31,7 +31,7 @@ function FanConnector({ branches = 3, converge = false }) {
   return (
     <svg
       aria-hidden="true"
-      className="h-2.5 w-full text-line"
+      className="h-2 w-full shrink-0 text-line"
       viewBox="0 0 100 8"
       preserveAspectRatio="none"
     >
@@ -52,10 +52,10 @@ function FanConnector({ branches = 3, converge = false }) {
 function LayerConnect({ branches = 3, converge = false }) {
   return (
     <>
-      <div className="@min-[26rem]:hidden">
+      <div className="shrink-0 @min-[20rem]:hidden">
         <Stem />
       </div>
-      <div className="hidden @min-[26rem]:block">
+      <div className="hidden shrink-0 @min-[20rem]:block">
         <FanConnector branches={branches} converge={converge} />
       </div>
     </>
@@ -86,10 +86,10 @@ export default function ArchitectureDiagram({ architecture }) {
     architecture;
 
   return (
-    <figure className="@container flex h-full min-h-0 flex-col justify-center gap-1 overflow-x-hidden p-2.5 @min-[26rem]:gap-1.5 @min-[26rem]:p-3">
+    <figure className="@container flex max-h-full min-h-full flex-col justify-safe-center gap-1 overflow-x-hidden overflow-y-auto p-2 @min-[20rem]:p-2.5">
       {summary ? <p className="sr-only">{summary}</p> : null}
 
-      <div className="grid grid-cols-1 gap-1 @min-[26rem]:grid-cols-3 @min-[26rem]:gap-1.5">
+      <div className="grid shrink-0 grid-cols-3 gap-1 @min-[20rem]:gap-1.5">
         {portals.map((portal) => (
           <Box key={portal.title} title={portal.title} />
         ))}
@@ -97,13 +97,13 @@ export default function ArchitectureDiagram({ architecture }) {
 
       <LayerConnect branches={portals.length} converge />
 
-      <div className="@min-[26rem]:mx-auto @min-[26rem]:w-[min(100%,17rem)]">
+      <div className="shrink-0 @min-[20rem]:mx-auto @min-[20rem]:w-[min(100%,17rem)]">
         <Box title={gateway.title} hint={gateway.hint} />
       </div>
 
       <LayerConnect branches={services.length} />
 
-      <div className="grid grid-cols-1 gap-1 @min-[26rem]:grid-cols-3 @min-[26rem]:gap-1.5">
+      <div className="grid shrink-0 grid-cols-1 gap-1 @min-[20rem]:grid-cols-3 @min-[20rem]:gap-1.5">
         {services.map((service) => (
           <ServiceBox key={service.title} service={service} />
         ))}
@@ -111,7 +111,7 @@ export default function ArchitectureDiagram({ architecture }) {
 
       <LayerConnect branches={services.length} converge />
 
-      <div className="grid grid-cols-1 items-stretch gap-1 @min-[26rem]:grid-cols-[1.15fr_0.85fr] @min-[26rem]:gap-1.5">
+      <div className="grid shrink-0 grid-cols-1 items-stretch gap-1 @min-[20rem]:grid-cols-[1.15fr_0.85fr] @min-[20rem]:gap-1.5">
         <Box accent title={kafka.title} hint={kafka.events}>
           {kafka.paymentFlow ? (
             <p className="mt-0.5 text-[10px] leading-snug text-faint">
@@ -123,7 +123,7 @@ export default function ArchitectureDiagram({ architecture }) {
       </div>
 
       {caption ? (
-        <figcaption className="text-center text-[10px] leading-snug text-faint">
+        <figcaption className="shrink-0 text-center text-[10px] leading-snug text-faint">
           {caption}
         </figcaption>
       ) : null}
