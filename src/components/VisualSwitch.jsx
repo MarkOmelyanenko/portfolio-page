@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 import ArchitectureDiagram from "./ArchitectureDiagram";
 
@@ -33,6 +33,84 @@ function VisualTabs({ options, activeId, onChange }) {
   );
 }
 
+function ViewportVideo({ option, reduceMotion }) {
+  const containerRef = useRef(null);
+  const videoRef = useRef(null);
+  const pausedByObserverRef = useRef(false);
+  const userPausedRef = useRef(false);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const video = videoRef.current;
+    if (!container || !video) return undefined;
+
+    const tryPlay = () => {
+      if (reduceMotion || userPausedRef.current) return;
+      const playPromise = video.play();
+      if (playPromise) {
+        playPromise.catch(() => {});
+      }
+    };
+
+    const pauseFromObserver = () => {
+      if (video.paused) return;
+      pausedByObserverRef.current = true;
+      video.pause();
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
+          tryPlay();
+        } else {
+          pauseFromObserver();
+        }
+      },
+      { threshold: [0, 0.35, 0.5, 1] },
+    );
+
+    observer.observe(container);
+
+    const onPause = () => {
+      if (pausedByObserverRef.current) {
+        pausedByObserverRef.current = false;
+        return;
+      }
+      userPausedRef.current = true;
+    };
+
+    const onPlay = () => {
+      userPausedRef.current = false;
+    };
+
+    video.addEventListener("pause", onPause);
+    video.addEventListener("play", onPlay);
+
+    return () => {
+      observer.disconnect();
+      video.removeEventListener("pause", onPause);
+      video.removeEventListener("play", onPlay);
+      video.pause();
+    };
+  }, [reduceMotion]);
+
+  return (
+    <div ref={containerRef} className="h-full w-full">
+      <video
+        ref={videoRef}
+        src={option.src}
+        muted
+        playsInline
+        loop
+        controls
+        preload="metadata"
+        className="h-full w-full bg-page object-contain"
+        aria-label={option.label}
+      />
+    </div>
+  );
+}
+
 function VisualBody({ option, reduceMotion }) {
   if (option.type === "image") {
     return (
@@ -50,17 +128,10 @@ function VisualBody({ option, reduceMotion }) {
 
   if (option.type === "video") {
     return (
-      <video
+      <ViewportVideo
         key={option.src}
-        src={option.src}
-        muted
-        playsInline
-        loop
-        controls
-        preload="metadata"
-        autoPlay={!reduceMotion}
-        className="h-full w-full bg-page object-contain"
-        aria-label={option.label}
+        option={option}
+        reduceMotion={reduceMotion}
       />
     );
   }

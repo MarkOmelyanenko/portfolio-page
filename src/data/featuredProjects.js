@@ -3,51 +3,38 @@ import { assetUrl } from "./paths";
 const marketplaceArchitecture = {
   caption:
     "Six backend services · Kafka event flows · isolated PostgreSQL databases",
-  note: "Payments Service ⇄ Provider Simulator via signed webhooks",
-  groups: [
+  summary:
+    "Partner Portal, Buyer Portal and Ops Dashboard connect through the API Gateway. The gateway routes to Offer, Orders and Payments services. Each of those three services uses an isolated PostgreSQL database: offer_db, order_db and payment_db. Kafka carries offer and payment events. Enrichment Service consumes offer.created and publishes offer.enriched back to Offer Service. Payments Service communicates with Provider Simulator through outbound requests and signed webhooks. Payment captured and failed events go from Payments to Orders through Kafka.",
+  portals: [
+    { title: "Partner Portal" },
+    { title: "Buyer Portal" },
+    { title: "Ops Dashboard" },
+  ],
+  gateway: {
+    title: "API Gateway",
+    hint: "routing · CORS · rate limits · correlation IDs",
+  },
+  services: [
+    { title: "Offer Service", hint: "offer_db" },
+    { title: "Orders Service", hint: "order_db" },
     {
-      label: "User applications",
-      items: [
-        { title: "Partner Portal" },
-        { title: "Buyer Portal" },
-        { title: "Ops Dashboard" },
-      ],
-    },
-    {
-      label: "Entry",
-      items: [
-        {
-          title: "API Gateway",
-          hint: "routing · CORS · rate limits · correlation IDs",
-        },
-      ],
-    },
-    {
-      label: "Core domain",
-      items: [
-        { title: "Offer Service", hint: "offer_db" },
-        { title: "Orders Service", hint: "order_db" },
-        { title: "Payments Service", hint: "payment_db" },
-      ],
-    },
-    {
-      label: "Async",
-      accent: true,
-      items: [
-        {
-          title: "Kafka",
-          hint: "offer.created · offer.enriched · payment.captured / failed",
-        },
-      ],
-    },
-    {
-      label: "Support & external",
-      items: [
-        { title: "Enrichment Service", hint: "offer.created → offer.enriched" },
-        { title: "Provider Simulator", hint: "signed webhooks" },
-      ],
+      title: "Payments Service",
+      hint: "payment_db",
+      integration: {
+        title: "Provider Simulator",
+        hint: "request · signed webhook",
+      },
     },
   ],
+  kafka: {
+    title: "Kafka",
+    events: "offer.created · offer.enriched",
+    paymentFlow: "payment.captured / failed → Orders",
+  },
+  enrichment: {
+    title: "Enrichment Service",
+    hint: "offer.created → offer.enriched",
+  },
 };
 
 export const featuredProjects = [
