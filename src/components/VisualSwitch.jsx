@@ -157,7 +157,13 @@ export default function VisualSwitch({ visual }) {
   return (
     <div className="overflow-hidden rounded-md border border-line bg-surface">
       <VisualTabs options={options} activeId={active.id} onChange={setActiveId} />
-      <div className="aspect-[16/10] min-h-0 overflow-hidden">
+      <div
+        className={
+          active.type === "architecture"
+            ? "@container aspect-[16/10] min-h-0 overflow-x-hidden overflow-y-auto"
+            : "aspect-[16/10] min-h-0 overflow-hidden"
+        }
+      >
         <VisualBody option={active} reduceMotion={reduceMotion} />
       </div>
     </div>
