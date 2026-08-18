@@ -83,7 +83,7 @@ export const archiveProjects = [
     title: "To Do List App",
     stack: "React, JavaScript, CSS",
     github:
-      "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/React/color-picker-app",
+      "https://github.com/MarkOmelyanenko/portfolio-page/tree/main/public/projects/React/to-do-app",
     demo: assetUrl("projects/React/to-do-app/index.html"),
   },
   {

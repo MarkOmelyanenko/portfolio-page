@@ -1,19 +1,8 @@
 import ExternalLink from "./ExternalLink";
+import VisualSwitch from "./VisualSwitch";
 
 export default function ProjectCaseStudy({ project, reverse = false }) {
-  const visual = project.image ? (
-    <div className="aspect-[16/10] overflow-hidden rounded-md border border-line bg-surface">
-      <img
-        src={project.image}
-        alt={project.imageAlt}
-        width={1600}
-        height={1000}
-        loading="lazy"
-        decoding="async"
-        className="h-full w-full object-cover object-top"
-      />
-    </div>
-  ) : null;
+  const visual = project.visual?.options?.length ? project.visual : null;
 
   return (
     <article
@@ -61,7 +50,9 @@ export default function ProjectCaseStudy({ project, reverse = false }) {
         </div>
       </div>
       {visual ? (
-        <div className={reverse ? "lg:order-1" : undefined}>{visual}</div>
+        <div className={reverse ? "lg:order-1" : undefined}>
+          <VisualSwitch visual={visual} />
+        </div>
       ) : null}
     </article>
   );
