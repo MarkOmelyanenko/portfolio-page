@@ -1,7 +1,7 @@
 function Box({ title, hint, accent = false, children, className = "" }) {
   return (
     <div
-      className={`min-w-0 rounded-md border px-1.5 py-1 text-center ${
+      className={`flex h-full min-w-0 flex-col items-center justify-center rounded-md border px-1.5 py-1 text-center ${
         accent ? "border-accent" : "border-line"
       } ${className}`}
     >
