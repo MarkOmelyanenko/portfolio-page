@@ -1,6 +1,7 @@
 import { education } from "../data/education";
 import { site } from "../data/site";
 import FadeIn from "./FadeIn";
+import LocationPin from "./LocationPin";
 import SectionHeading from "./SectionHeading";
 
 export default function About() {
@@ -10,36 +11,26 @@ export default function About() {
         <SectionHeading eyebrow="About" title="Background" />
         <div className="grid gap-16 lg:grid-cols-[minmax(0,1.2fr)_minmax(16rem,0.8fr)]">
           <FadeIn>
-            <div className="max-w-2xl space-y-5 text-base leading-relaxed text-mute">
-              <p>
-                I’m a Computer Science graduate from Poznan University of
-                Technology with an Erasmus year at UMONS in Belgium. I primarily
-                work with Java and Spring Boot and enjoy backend problems
-                involving distributed systems, reliability and data flow.
-              </p>
-              <p>
-                I’m particularly interested in systems that move beyond basic
-                CRUD — asynchronous processing, caching, observability,
-                real-time communication and reliable integration between
-                services.
-              </p>
-              <p className="inline-flex items-center gap-1.5 text-sm text-faint">
-                <svg
-                  className="h-4 w-4 shrink-0"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11Z"
-                  />
-                  <circle cx="12" cy="10" r="2.25" strokeWidth={1.5} />
-                </svg>
-                {site.location} · {site.relocation}
+            <div className="max-w-2xl space-y-5">
+              <div className="space-y-5 text-base leading-relaxed text-mute">
+                <p>
+                  I’m a Computer Science graduate from Poznan University of
+                  Technology with an Erasmus year at UMONS in Belgium. I primarily
+                  work with Java and Spring Boot and enjoy backend problems
+                  involving distributed systems, reliability and data flow.
+                </p>
+                <p>
+                  I’m particularly interested in systems that move beyond basic
+                  CRUD — asynchronous processing, caching, observability,
+                  real-time communication and reliable integration between
+                  services.
+                </p>
+              </div>
+              <p className="flex items-center gap-1.5 text-sm leading-none text-faint">
+                <LocationPin />
+                <span>
+                  {site.location} · {site.relocation}
+                </span>
               </p>
               <p className="text-sm text-faint">
                 English and Polish — professional working proficiency. Ukrainian
