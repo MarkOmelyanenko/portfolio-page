@@ -86,7 +86,7 @@ export default function ArchitectureDiagram({ architecture }) {
     architecture;
 
   return (
-    <figure className="@container flex max-h-full min-h-full flex-col justify-safe-center gap-1 overflow-x-hidden overflow-y-auto p-2 @min-[20rem]:p-2.5">
+    <figure className="@container flex max-h-full min-h-full flex-col justify-start gap-1 overflow-x-hidden overflow-y-auto p-2 @min-[20rem]:p-2.5">
       {summary ? <p className="sr-only">{summary}</p> : null}
 
       <div className="grid shrink-0 grid-cols-3 gap-1 @min-[20rem]:gap-1.5">
