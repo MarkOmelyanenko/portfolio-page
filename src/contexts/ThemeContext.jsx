@@ -1,46 +1,49 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import {
+  applyColorScheme,
+  getResolvedScheme,
+  getSystemScheme,
+  isSchemePinned,
+  toggleColorScheme,
+} from "../theme";
 
-const ThemeContext = createContext();
+const ThemeContext = createContext(null);
 
 export function ThemeProvider({ children }) {
-  const [isDark, setIsDark] = useState(true);
+  const [scheme, setScheme] = useState(() => getResolvedScheme());
+  const [pinned, setPinned] = useState(() => isSchemePinned());
 
   useEffect(() => {
-    // Check for saved theme preference or default to dark
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    const shouldBeDark = savedTheme
-      ? savedTheme === "dark"
-      : prefersDark;
+    applyColorScheme(pinned ? scheme : null);
+  }, [pinned, scheme]);
 
-    setIsDark(shouldBeDark);
-    updateTheme(shouldBeDark);
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const onChange = () => {
+      if (!isSchemePinned()) {
+        setScheme(getSystemScheme());
+      }
+    };
+
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
   }, []);
 
-  const updateTheme = (dark) => {
-    const html = document.documentElement;
-    if (dark) {
-      html.classList.remove("light");
-      html.classList.add("dark");
-    } else {
-      html.classList.remove("dark");
-      html.classList.add("light");
-    }
-    localStorage.setItem("theme", dark ? "dark" : "light");
-  };
-
-  const toggleTheme = () => {
-    const newTheme = !isDark;
-    setIsDark(newTheme);
-    updateTheme(newTheme);
-  };
+  const value = useMemo(
+    () => ({
+      scheme,
+      pinned,
+      toggleTheme() {
+        const next = toggleColorScheme();
+        setPinned(isSchemePinned());
+        setScheme(next);
+      },
+    }),
+    [scheme, pinned],
+  );
 
   return (
-    <ThemeContext.Provider value={{ isDark, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 }
 
@@ -51,4 +54,3 @@ export function useTheme() {
   }
   return context;
 }
-

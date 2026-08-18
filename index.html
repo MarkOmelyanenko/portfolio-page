@@ -2,9 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      {
+        const colorScheme = localStorage.getItem("color-scheme");
+        if (colorScheme === "light" || colorScheme === "dark") {
+          document.querySelector('meta[name="color-scheme"]').content =
+            colorScheme;
+          document.documentElement.classList.add("scheme-" + colorScheme);
+        }
+      }
+    </script>
+    <title>Mark Omelyanenko — Software Engineer</title>
+    <meta
+      name="description"
+      content="Software Engineer focused on Java, Spring Boot and backend systems. Commercial experience, open-source contributions and production-oriented full-stack projects."
+    />
+    <link rel="canonical" href="https://MarkOmelyanenko.github.io/portfolio-page/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://MarkOmelyanenko.github.io/portfolio-page/" />
+    <meta property="og:title" content="Mark Omelyanenko — Software Engineer" />
+    <meta
+      property="og:description"
+      content="Software Engineer focused on Java, Spring Boot and backend systems. Commercial experience, open-source contributions and production-oriented full-stack projects."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Mark Omelyanenko — Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="Software Engineer focused on Java, Spring Boot and backend systems. Commercial experience, open-source contributions and production-oriented full-stack projects."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="root"></div>

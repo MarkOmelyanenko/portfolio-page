@@ -1,135 +1,74 @@
-// eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion";
-import { Button } from "./ui/button";
+import { site } from "../data/site";
+import ExternalLink from "./ExternalLink";
+import FadeIn from "./FadeIn";
+import { GitHubIcon, LinkedInIcon } from "./SocialIcons";
+
+function scrollToWork() {
+  document.getElementById("work")?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
 export default function Hero() {
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden"
+      className="flex min-h-[78vh] items-center pt-24 pb-20"
     >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.2, 0.1],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.1, 0.2, 0.1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl"
-        />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
-        <div className="text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-6"
-          >
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 px-1 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600 bg-clip-text text-transparent break-words"
+      <div className="mx-auto w-full max-w-[1120px] px-5 sm:px-8">
+        <FadeIn>
+          <p className="text-sm text-mute">{site.name}</p>
+          <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.12] tracking-tight text-ink sm:text-5xl lg:text-[3.25rem]">
+            Software Engineer building backend systems with Java &amp; Spring Boot.
+          </h1>
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-mute sm:text-lg">
+            Commercial backend experience, open-source Java contributions, and
+            production-oriented full-stack systems using Kafka, PostgreSQL, Redis
+            and cloud infrastructure.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              onClick={scrollToWork}
+              className="rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-page transition-opacity hover:opacity-90"
             >
-              👋 Hi, I'm Mark Omelyanenko
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-2"
+              View my work
+            </button>
+            <ExternalLink
+              href={site.cvHref}
+              download={site.cvFilename}
+              className="rounded-md border border-line px-4 py-2.5 text-sm font-medium text-ink transition-colors hover:border-mute"
             >
-              Graduate Software Engineer
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-lg text-gray-400 max-w-2xl mx-auto mb-8"
+              Download CV
+            </ExternalLink>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-mute">
+            <ExternalLink href={site.github} className="inline-flex items-center gap-1.5 hover:text-ink">
+              <GitHubIcon className="h-4 w-4" />
+              GitHub
+            </ExternalLink>
+            <ExternalLink href={site.linkedin} className="inline-flex items-center gap-1.5 hover:text-ink">
+              <LinkedInIcon className="h-4 w-4" />
+              LinkedIn
+            </ExternalLink>
+          </div>
+          <p className="mt-8 inline-flex items-center gap-1.5 text-sm text-faint">
+            <svg
+              className="h-4 w-4 shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
             >
-              Passionate about building scalable applications, working with
-              high-frequency data, and creating innovative solutions using
-              modern technologies
-            </motion.p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex flex-wrap gap-4 justify-center"
-          >
-            <Button
-              onClick={() => scrollToSection("projects")}
-              className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-3 text-lg rounded-lg transition-all"
-            >
-              View My Work
-            </Button>
-            <Button
-              onClick={() => scrollToSection("contact")}
-              variant="outline"
-              className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-gray-900 px-8 py-3 text-lg rounded-lg transition-all"
-            >
-              Get In Touch
-            </Button>
-          </motion.div>
-
-          {/* Scroll indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.2 }}
-            className="mt-16"
-          >
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="flex flex-col items-center gap-2 text-gray-400 cursor-pointer"
-              onClick={() => scrollToSection("about")}
-            >
-              <span className="text-sm">Scroll to explore</span>
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                />
-              </svg>
-            </motion.div>
-          </motion.div>
-        </div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11Z"
+              />
+              <circle cx="12" cy="10" r="2.25" strokeWidth={1.5} />
+            </svg>
+            {site.location} · {site.relocation}
+          </p>
+        </FadeIn>
       </div>
     </section>
   );
