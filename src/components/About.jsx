@@ -23,7 +23,22 @@ export default function About() {
                 real-time communication and reliable integration between
                 services.
               </p>
-              <p className="text-sm text-faint">
+              <p className="inline-flex items-center gap-1.5 text-sm text-faint">
+                <svg
+                  className="h-4 w-4 shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11Z"
+                  />
+                  <circle cx="12" cy="10" r="2.25" strokeWidth={1.5} />
+                </svg>
                 {site.location} · {site.relocation}
               </p>
               <p className="text-sm text-faint">
