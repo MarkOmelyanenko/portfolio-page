@@ -5,7 +5,7 @@ export const technologyGroups = [
   },
   {
     title: "Frontend",
-    items: ["React", "TypeScript"],
+    items: ["React", "Next.js", "TypeScript"],
   },
   {
     title: "Infrastructure",
@@ -18,6 +18,7 @@ export const technologyGroups = [
 ];
 
 export const secondaryTechnologies = [
+  "C/C++",
   "Kotlin",
   "Python",
   "SQL",
