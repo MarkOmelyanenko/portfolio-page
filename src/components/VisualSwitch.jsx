@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 import ArchitectureDiagram from "./ArchitectureDiagram";
+import ImageGallery from "./ImageGallery";
 
 function VisualTabs({ options, activeId, onChange }) {
   if (options.length < 2) return null;
@@ -9,7 +10,7 @@ function VisualTabs({ options, activeId, onChange }) {
     <div
       role="group"
       aria-label="Project visual"
-      className="flex gap-1 border-b border-line px-2 py-1"
+      className="flex flex-wrap gap-1 border-b border-line px-2 py-1"
     >
       {options.map((option) => {
         const selected = option.id === activeId;
@@ -149,8 +150,68 @@ export default function VisualSwitch({ visual }) {
   const [activeId, setActiveId] = useState(
     visual.defaultOption ?? options[0]?.id,
   );
+  const [galleryView, setGalleryView] = useState(() => {
+    if (visual.display !== "gallery") return "screenshots";
+    const extras = options.filter((option) => option.type !== "image");
+    return extras.some((option) => option.id === visual.defaultOption)
+      ? visual.defaultOption
+      : "screenshots";
+  });
 
   if (options.length === 0) return null;
+
+  if (visual.display === "gallery") {
+    const galleryImages = options
+      .filter((option) => option.type === "image")
+      .map((option) => ({
+        id: option.id,
+        src: option.src,
+        alt: option.alt,
+        label: option.label,
+      }));
+    const extraOptions = options.filter((option) => option.type !== "image");
+    const defaultIndex = Math.max(
+      0,
+      galleryImages.findIndex((image) => image.id === visual.defaultOption),
+    );
+
+    if (extraOptions.length === 0) {
+      return (
+        <ImageGallery images={galleryImages} defaultIndex={defaultIndex} />
+      );
+    }
+
+    const viewTabs = [
+      { id: "screenshots", label: "Product" },
+      ...extraOptions.map((option) => ({
+        id: option.id,
+        label: option.label,
+      })),
+    ];
+    const activeExtra =
+      extraOptions.find((option) => option.id === galleryView) ?? extraOptions[0];
+
+    return (
+      <div className="overflow-hidden rounded-md border border-line bg-surface">
+        <VisualTabs
+          options={viewTabs}
+          activeId={galleryView}
+          onChange={setGalleryView}
+        />
+        {galleryView === "screenshots" ? (
+          <ImageGallery
+            images={galleryImages}
+            defaultIndex={defaultIndex}
+            embedded
+          />
+        ) : (
+          <div className="@container aspect-[16/10] min-h-0 overflow-x-hidden overflow-y-auto">
+            <VisualBody option={activeExtra} reduceMotion={reduceMotion} />
+          </div>
+        )}
+      </div>
+    );
+  }
 
   const active = options.find((option) => option.id === activeId) ?? options[0];
 
